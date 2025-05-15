@@ -1,0 +1,109 @@
+:root {
+  --font-sans:  "Inter", sans-ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  --font-serif: "Book Antiqua", "Palatino Linotype", Palatino, serif;
+
+  --dark-background: rgb(28, 27, 28);
+  --dark-font-color: rgb(233, 227, 230);
+  --light-background: white;
+  --light-font-color: rgb(17, 24, 39);;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: var(--light-background);
+  color: var(--light-font-color);
+  font-size: 100%;
+  font-family: var(--font-sans);
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1,
+h2,
+h3 {
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+}
+
+h2, h3 {
+  font-weight: 500;
+}
+
+h1 {
+  color: rgb(17, 24, 39);
+  font-size: 3rem;
+  font-weight: 500
+}
+
+/* h2 {
+  color: rgb(17, 24, 39);
+  font-size: 2rem;
+  font-weight: 500;
+} */
+
+a {
+  color: rgb(27, 47, 89);
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(38, 75, 156);
+  text-decoration: underline;
+}
+
+p {
+  line-height: 150%;
+
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+}
+
+.card p {
+    text-align: justify;
+}
+
+main section {
+  width: min(900px, 100%);
+  padding: 2ch;
+}
+
+.icon {
+  height: 2rem;
+}
+
+.cards {
+  display: grid; 
+  gap: 2rem; 
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+@media (max-width: 900px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  padding-bottom: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+.card:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
