@@ -1,9 +1,7 @@
 # This file will take a markdown file as an argument and convert it to html. 
 
 import markdown
-import sys
-import os
-import re
+
 
 start = '''
 <!doctype html>
@@ -23,6 +21,15 @@ start = '''
   <link rel="icon" href="./cat-solid.svg" type="image/x-icon">
   <link rel="apple-touch-icon" href="./cat-solid.svg">
 
+  
+  <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/default.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+
+<!-- and it's easy to individually load additional languages -->
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/languages/python.min.js"></script>
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/languages/json.min.js"></script>
+<script>hljs.highlightAll();</script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -34,7 +41,7 @@ start = '''
 
 <body>
   <main style="display:flex; align-items: center; flex-direction: column;">
-   <section style="display: flex; flex-direction: column; gap: 1rem;">
+   <section style="display: flex; flex-direction: column; gap: 0.2rem;">
 '''
 
 end = '''
@@ -60,7 +67,7 @@ def convert_markdown_to_html(input_file, output_file):
 
     
     # Convert markdown to HTML
-    converted = markdown.markdown(text)
+    converted = markdown.markdown(text, extensions=['fenced_code' ])
     html = start + converted + end
 
 

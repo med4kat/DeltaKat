@@ -1,7 +1,9 @@
 # Bigrams and Disappointment: 
 ## A Very Short AI Adventure
 
-date: 2025-04-30 
+2025-04-20 
+
+![alt text](Bigrams.png)
 
 ## 1. Setup: Curiosity Begins
 
@@ -9,7 +11,8 @@ I got really excited about all this AI stuff. Everyone kept saying, "It's just p
 
 So I started from the beginning: **Statistical Language Models**, specifically **bigrams**. Predict the next word based on the last. Like T9, but with hope.
 
-By the way, according to Dr. Lisa Feldman Barrett, the human brain works a bit like T9 too. What a funny coincidence!
+By the way, according to [Dr. Lisa Feldman Barrett](https://www.youtube.com/watch?v=rCtvAvZtJyE), the human brain works a bit like T9 too. What a funny coincidence!
+
 
 ---
 
@@ -23,13 +26,23 @@ Let’s keep it simple:
 
 Result? Total nonsense.
 
-```
-['chip shortage', 'market growth', 'Q3 earnings', 'quarter quarter']
+
+```json
+[  
+    [["smart", "glasses"], 4],
+    [["lowest", "price"], 3],
+    [["motorola", "razr"], 3],
+    [["samsung", "galaxy"], 3],
+    [["la", "gama"], 3]
+]
 ```
 
-Some of these make sense. Most don’t. “Quarter quarter”? Really?
 
-!\[Bigrams wordcloud goes here]
+Some of these make sense. Most don’t. “la gama”? Really?
+
+![alt text](bigram_word_cloud.png)
+
+
 
 ---
 

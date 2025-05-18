@@ -16,6 +16,15 @@
   <link rel="icon" href="./cat-solid.svg" type="image/x-icon">
   <link rel="apple-touch-icon" href="./cat-solid.svg">
 
+  
+  <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/default.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
+
+<!-- and it's easy to individually load additional languages -->
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/languages/python.min.js"></script>
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/languages/json.min.js"></script>
+<script>hljs.highlightAll();</script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -27,14 +36,15 @@
 
 <body>
   <main style="display:flex; align-items: center; flex-direction: column;">
-   <section style="display: flex; flex-direction: column; gap: 1rem;">
+   <section style="display: flex; flex-direction: column; gap: 0.2rem;">
 <h1>Bigrams and Disappointment:</h1>
 <h2>A Very Short AI Adventure</h2>
-<p>date: 2025-04-30 </p>
+<p>2025-04-20 </p>
+<p><img alt="alt text" src="Bigrams.png" /></p>
 <h2>1. Setup: Curiosity Begins</h2>
 <p>I got really excited about all this AI stuff. Everyone kept saying, "It's just predicting the next word." Cool. But <em>why</em> does that work?</p>
 <p>So I started from the beginning: <strong>Statistical Language Models</strong>, specifically <strong>bigrams</strong>. Predict the next word based on the last. Like T9, but with hope.</p>
-<p>By the way, according to Dr. Lisa Feldman Barrett, the human brain works a bit like T9 too. What a funny coincidence!</p>
+<p>By the way, according to <a href="https://www.youtube.com/watch?v=rCtvAvZtJyE">Dr. Lisa Feldman Barrett</a>, the human brain works a bit like T9 too. What a funny coincidence!</p>
 <hr />
 <h2>2. The Plan</h2>
 <p>Let’s keep it simple:</p>
@@ -44,9 +54,16 @@
 <li>Count the most frequent bigrams</li>
 </ul>
 <p>Result? Total nonsense.</p>
-<p><code>['chip shortage', 'market growth', 'Q3 earnings', 'quarter quarter']</code></p>
-<p>Some of these make sense. Most don’t. “Quarter quarter”? Really?</p>
-<p>![Bigrams wordcloud goes here]</p>
+<pre><code class="language-json">[  
+    [[&quot;smart&quot;, &quot;glasses&quot;], 4],
+    [[&quot;lowest&quot;, &quot;price&quot;], 3],
+    [[&quot;motorola&quot;, &quot;razr&quot;], 3],
+    [[&quot;samsung&quot;, &quot;galaxy&quot;], 3],
+    [[&quot;la&quot;, &quot;gama&quot;], 3]
+]
+</code></pre>
+<p>Some of these make sense. Most don’t. “la gama”? Really?</p>
+<p><img alt="alt text" src="bigram_word_cloud.png" /></p>
 <hr />
 <h2>3. I Refuse to Give Up</h2>
 <p>Next up: <strong>sentiment analysis</strong> with <code>TextBlob</code>.</p>
@@ -56,8 +73,8 @@
 <li><strong>Subjectivity</strong>: is it fact or opinion?</li>
 </ul>
 <p>Cool. Except… again, not much to show. Turns out news headlines are pretty neutral most of the time. Even the spicy ones.</p>
-<p><code>json
-{"headline": "NVIDIA soars on new chip", "polarity": 0.3, "subjectivity": 0.5}</code></p>
+<pre><code class="language-json">{&quot;headline&quot;: &quot;NVIDIA soars on new chip&quot;, &quot;polarity&quot;: 0.3, &quot;subjectivity&quot;: 0.5}
+</code></pre>
 <p>Doesn’t tell you much.</p>
 <hr />
 <h2>4. A Final Push: Stock Data</h2>
