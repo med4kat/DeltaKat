@@ -72,10 +72,14 @@
 <li><strong>Polarity</strong>: is it positive or negative?</li>
 <li><strong>Subjectivity</strong>: is it fact or opinion?</li>
 </ul>
-<p>Cool. Except… again, not much to show. Turns out news headlines are pretty neutral most of the time. Even the spicy ones.</p>
-<pre><code class="language-json">{&quot;headline&quot;: &quot;NVIDIA soars on new chip&quot;, &quot;polarity&quot;: 0.3, &quot;subjectivity&quot;: 0.5}
+<p>Here’s an actual result from one of the news headlines:</p>
+<pre><code class="language-json">{&quot;headline&quot;: &quot;Cerebras CEO actually finds common ground with Nvidia as startup notches IBM win&quot;, 
+&quot;polarity&quot;: 0.17, 
+&quot;subjectivity&quot;: 0.33}
 </code></pre>
-<p>Doesn’t tell you much.</p>
+<p>Which kinda reads like: “meh, slightly positive, not too opinionated.”
+  …and to be fair, that’s not wrong. But is it useful?</p>
+<p>Not really. Most headlines just came back as zeros—no strong emotions, no real opinions. A lot of them were either too dry or too clickbaity for the sentiment tool to pick up anything useful.</p>
 <hr />
 <h2>4. A Final Push: Stock Data</h2>
 <p>Alright, let’s <em>really</em> try:</p>
